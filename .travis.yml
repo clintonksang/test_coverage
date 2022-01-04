@@ -1,0 +1,11 @@
+language: dart
+
+dart:
+- stable
+- dev
+
+script:
+- pub run test_coverage --exclude="test/stub_package/**"
+- dartfmt -n --set-exit-if-changed lib/
+- dartanalyzer --fatal-infos --fatal-warnings .
+#- bash <(curl -s https://codecov.io/bash)
